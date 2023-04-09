@@ -5,7 +5,7 @@ export function createRouter(options) {
   // router 实例
   const router = {
     options, // 保存配置项
-    current: ref(window.location.hash.slice(1) || "/"),
+    current: ref(window.location.hash.slice(1) || "/"), // ref包裹的话routerview就会对这个值产生依赖，这个值一改变就会重新render
     // install 调用者不确定
     install(app) {
       const router = this;
